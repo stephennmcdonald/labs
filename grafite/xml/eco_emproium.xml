@@ -1,0 +1,16 @@
+<gallery>
+	<center>false</center>
+	<padding>3</padding>
+	<tilesize>20</tilesize>
+	<interval>.33</interval>
+	<img align="left" src="images/environments/eco_emproium/1.jpg"/>
+	<img align="right" src="images/environments/eco_emproium/2.jpg"/>
+	<img align="left" src="images/environments/eco_emproium/3.jpg"/>
+	<img align="left" src="images/environments/eco_emproium/4.jpg" default="true" />
+	<img align="left" src="images/environments/eco_emproium/5.jpg"/>
+	<img align="left" src="images/environments/eco_emproium/6.jpg"/>
+	<img align="left" src="images/environments/eco_emproium/7.jpg"/>
+	<img align="left" src="images/environments/eco_emproium/8.jpg"/>
+	<img align="left" src="images/environments/eco_emproium/9.jpg"/>
+	<img align="left" src="images/environments/eco_emproium/10.jpg"/>
+</gallery>

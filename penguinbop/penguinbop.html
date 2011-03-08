@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Penguin Bop</title>
+		<style type="text/css">
+			#flashContent {
+			width: 600px;
+			margin: 0px auto;
+			}
+			body {
+			background-color: #FFF;
+			}
+		</style>
+		<script type="text/javascript" src="scripts/swfobject.js"></script>
+	</head>
+	
+	<body>
+		<div id="flashContent">&nbsp;</div>
+		<script type="text/javascript" >
+			var so = new SWFObject("penguinbop.swf", "flsh_movie", "600", "450", "8", "#FFF");
+			so.addParam("quality", "high");
+			so.setAttribute("altContent", "You must install Flash to view this page.");
+			so.setAttribute("allowScriptAcces", "never");
+			so.write("flashContent");</script>
+	</body>
+</html>

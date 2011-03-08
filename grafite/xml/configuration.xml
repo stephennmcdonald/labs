@@ -1,0 +1,69 @@
+<gallery>
+
+	<!-- First page uses slightly different XML since it is the logo -->
+	<page 
+		id="home"
+		logox="17"
+		logoy="13"
+		category="Top_Navigation"
+		clickName="Home"
+		src="home"
+		url="swfs/home.swf" />
+
+	<page 
+		id="who_we_are" 
+		title="WHO WE ARE" 
+		category="Top_Navigation" 
+		clickName="Who_We_Are" 
+		src="who_we_are"
+		url="swfs/whoweare.swf" />
+	
+	<page 
+		id="environments" 
+		title="ENVIRONMENTS WE HAVE CREATED" 
+		category="Top_Navigation" 
+		clickName="Environments_We_Have_Created" 
+		src="environments" >
+		
+		<gallery 
+			id="ecoemproium" 
+			xml="xml/eco_emproium.xml" 
+			title="ECO EMPROIUM" 
+			category="Bottom_Navigation" 
+			clickName="Eco_Emproium" 
+			src="environments/ecoemproium" />
+		<gallery 
+			id="lapetiemarche" 
+			xml="xml/la_petie_marche.xml" 
+			title="La PETIE MARCHE" 
+			category="Bottom_Navigation" 
+			clickName="La_Petie_Marche" 
+			src="environments/lapetiemarche" />
+		<gallery 
+			id="lux" 
+			xml="xml/lux.xml" 
+			title="LUX" 
+			category="Bottom_Navigation" 
+			clickName="Lux" 
+			src="environments/lux" />
+		<gallery 
+			id="seerenbee" 
+			xml="xml/seerenbee.xml" 
+			title="SEERENBEE" 
+			category="Bottom_Navigation" 
+			clickName="Seerenbee" 
+			src="environments/seerenbee" />
+			
+	</page>
+	
+	<page 
+		id="talk_with_us" 
+		title="TALK WITH US" 
+		category="Top_Navigation" 
+		clickName="Talk_With_Us"
+		src="talk_with_us"
+		url="swfs/talkwithus.swf" >
+		
+	</page>
+	
+</gallery>

@@ -1,0 +1,16 @@
+<gallery>
+	<center>false</center>
+	<padding>3</padding>
+	<tilesize>20</tilesize>
+	<interval>.33</interval>
+	<img align="left" src="images/environments/seerenbee/1.jpg"/>
+	<img align="right" src="images/environments/seerenbee/2.jpg"/>
+	<img align="left" src="images/environments/seerenbee/3.jpg"/>
+	<img align="left" src="images/environments/seerenbee/4.jpg"/>
+	<img align="left" src="images/environments/seerenbee/5.jpg"/>
+	<img align="left" src="images/environments/seerenbee/6.jpg"/>
+	<img align="left" src="images/environments/seerenbee/7.jpg"/>
+	<img align="left" src="images/environments/seerenbee/8.jpg"/>
+	<img align="left" src="images/environments/seerenbee/9.jpg"/>
+	<img align="left" src="images/environments/seerenbee/10.jpg"/>
+</gallery>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>AccGallery Proof of Concept - Flash 10</title>
+
+	<script type="text/javascript" src="swfobject.js"> </script>
+	<style type="text/css">
+		
+		/* hide from ie on mac \*/
+		html {
+			height: 100%;
+			overflow: hidden;
+		}
+		
+		#flashcontent {
+			height: 100%;
+		}
+		/* end hide */
+
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			background-color: #FFF;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="flashcontent">a</div>
+	<script type="text/javascript">
+		var so = new SWFObject("AccGalleryV10.swf", "flsh_movie", "100%", "100%", "10", "#FFFFFF");
+		so.addParam("quality", "high");
+		so.useExpressInstall('expressinstall.swf');
+		so.addParam("scale", "noscale");
+		so.setAttribute("altContent", "You must install Flash to view this page.");
+		so.write("flashcontent");
+	</script>
+	
+</body>
+
+</html>

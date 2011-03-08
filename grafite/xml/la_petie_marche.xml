@@ -1,0 +1,16 @@
+<gallery>
+	<center>false</center>
+	<padding>3</padding>
+	<tilesize>20</tilesize>
+	<interval>.33</interval>
+	<img align="left" src="images/environments/la_petie_marche/1.jpg"/>
+	<img align="right" src="images/environments/la_petie_marche/2.jpg"/>
+	<img align="left" src="images/environments/la_petie_marche/3.jpg"/>
+	<img align="left" src="images/environments/la_petie_marche/4.jpg"/>
+	<img align="left" src="images/environments/la_petie_marche/5.jpg"/>
+	<img align="left" src="images/environments/la_petie_marche/6.jpg"/>
+	<img align="left" src="images/environments/la_petie_marche/7.jpg"/>
+	<img align="left" src="images/environments/la_petie_marche/8.jpg"/>
+	<img align="left" src="images/environments/la_petie_marche/9.jpg"/>
+	<img align="left" src="images/environments/la_petie_marche/10.jpg"/>
+</gallery>

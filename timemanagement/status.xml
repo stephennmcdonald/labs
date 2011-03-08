@@ -1,0 +1,112 @@
+<status>
+	<date year='2009' month='11' day='1' />
+
+	<date year='2009' month='11' day='2'>
+		<job label='Rogers' color='0x000088' units='20' />
+		<job label='GSK' color='0x008888' units='20' />
+	</date>
+	
+	<date year='2009' month='11' day='3'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+	
+	<date year='2009' month='11' day='4'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+	
+	<date year='2009' month='11' day='5'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+	
+	<date year='2009' month='11' day='6'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+
+	<date year='2009' month='11' day='7' />
+	<date year='2009' month='11' day='8' />
+
+	<date year='2009' month='11' day='9'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+	
+	<date year='2009' month='11' day='10'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+	
+	<date year='2009' month='11' day='11'>
+		<job label='GSK' color='0x008888' units='20' />
+		<job label='Rogers' color='0x000088' units='20' />
+	</date>
+	
+	<date year='2009' month='11' day='12'>
+	</date>
+	
+	<date year='2009' month='11' day='13'>
+	</date>
+
+	<date year='2009' month='11' day='14' />
+	<date year='2009' month='11' day='15' />
+	
+	<date year='2009' month='11' day='16'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+	
+	<date year='2009' month='11' day='17'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+	
+	<date year='2009' month='11' day='18'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+	
+	<date year='2009' month='11' day='19'>
+		
+	</date>
+	
+	<date year='2009' month='11' day='20'>
+	</date>
+	
+	<date year='2009' month='11' day='21' />
+	<date year='2009' month='11' day='22' />
+	
+	<date year='2009' month='11' day='23'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+	
+	<date year='2009' month='11' day='24'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+	
+	<date year='2009' month='11' day='25'>
+	</date>
+	
+	<date year='2009' month='11' day='26'>
+		
+	</date>
+	
+	<date year='2009' month='11' day='27'>
+	</date>
+	
+	<date year='2009' month='11' day='28' />
+	<date year='2009' month='11' day='29' />
+	
+	<date year='2009' month='11' day='30'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+	
+	<date year='2009' month='12' day='1'>
+		<job label='GSK' color='0x008888' units='40' />
+	</date>
+	
+	<date year='2009' month='12' day='2'>
+		<job label='GSK' color='0x008888' units='20' />
+	</date>
+	
+	<date year='2009' month='12' day='3'>
+		
+	</date>
+	
+	<date year='2009' month='12' day='4'>
+	</date>
+	
+</status>

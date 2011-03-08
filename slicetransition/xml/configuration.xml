@@ -1,0 +1,29 @@
+<homepage>
+	<spot>
+		<display><![CDATA[assets/el_bg.jpg]]></display>
+		<link><![CDATA[]]></link>
+		<cols>8</cols>
+		<rows>5</rows>
+		<hspace>3</hspace>
+		<vspace>3</vspace>
+		<delay>1</delay>
+	</spot>
+	<spot>
+		<display><![CDATA[assets/WWE.swf]]></display>
+		<link><![CDATA[http://www.wwe.com]]></link>
+		<cols>8</cols>
+		<rows>5</rows>
+		<hspace>3</hspace>
+		<vspace>3</vspace>
+		<delay>5</delay>
+	</spot>
+	<spot>
+		<display><![CDATA[assets/monkey.jpg]]></display>
+		<link><![CDATA[http://www.ilovemonkeys.com]]></link>
+		<cols>8</cols>
+		<rows>5</rows>
+		<hspace>3</hspace>
+		<vspace>3</vspace>
+		<delay>5</delay>
+	</spot>
+</homepage>
