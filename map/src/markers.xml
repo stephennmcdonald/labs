@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stars>
+	<!-- http://www.alcyone.de/brightest_stars.html -->	
+	<constellation id="andromeda">
+		
+		<star id="alpheratz">
+			<lat>29.090556</lat>
+			<lon>0.139806</lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="mirach">
+			<lat>35.620556</lat>
+			<lon>1.162194</lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="alamak">
+			<lat>42.329722</lat>
+			<lon>2.065</lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+	</constellation>
+	
+	<constellation id="aquila">
+		
+		<star id="altair">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="alshain">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="tarazed">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+	</constellation>
+	
+	<constellation id="aquarius">
+		
+		<star id="sadalmelik">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="sadalsuud">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+	</constellation>
+	
+	<constellation id="aries">
+		
+		<star id="hamal">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+	</constellation>
+	
+	<constellation id="auriga">
+		
+		<star id="capella">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="menkalinan">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+	</constellation>
+	
+	<constellation id="bootes">
+		
+		<star id="arcturus">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="nekkar">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="seginius">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+	</constellation>
+	
+	<constellation id="capricornus">
+		
+		<star id="primagiedi">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="dabih">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="nashira">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="denebalgedi">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+	</constellation>
+	
+	<constellation id="carina">
+		
+		<star id="canopus">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="miaplacidus">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="avior">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="turais">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+	</constellation>
+	
+	<constellation id="cassiopeia">
+		
+		<star id="schedar">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="caph">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="cih">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="ruchbah">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="segin">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="achird">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+	</constellation>
+	
+	<constellation id="centaurus">
+		
+		<star id="rigilkentaurus">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="agena">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+	</constellation>
+	
+	<constellation id="cepheus">
+		
+		<star id="adleramin">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="alfirk">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="garnetstar">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="alkurhah">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+				
+	</constellation>
+	
+	<constellation id="cetus">
+		
+		<star id="menkar">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="denebkaitos">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="kaffaljidhmah">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="mira">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+				
+	</constellation>
+	
+	<constellation id="canis">
+		
+		<star id="sirius">
+			<lat>-16.716116</lat>
+			<lon>6.752477</lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="murzim">
+			<lat>-17.955833</lat>
+			<lon>6.378333</lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="wezen">
+			<lat>-26.393333</lat>
+			<lon>7.139861</lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="adharaz">
+			<lat>-28.972222</lat>
+			<lon>6.977083</lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="procyon">
+			<lat>5.225</lat>
+			<lon>7.655028</lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="gomeisa">
+			<lat>8.289444</lat>
+			<lon>7.4525</lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+	</constellation>
+	
+	<constellation id="cancer">
+		
+		<star id="acubens">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="altarf">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="asellusborealis">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="asellusaustralis">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+		
+		<star id="tegmine">
+			<lat></lat>
+			<lon></lon>
+			<minZoom>0</minZoom>
+			<maxZoom>10</maxZoom>
+		</star>
+
+	</constellation>
+</stars>

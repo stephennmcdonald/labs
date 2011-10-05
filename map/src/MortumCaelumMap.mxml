@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600" xmlns:maps="com.google.maps.*"
+			   backgroundColor="white"
+			   creationComplete="init();" >
+	<s:layout>
+		<s:VerticalLayout/>
+	</s:layout>
+
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<s:HTTPService id="markersService" url="{MARKERS_URL}" resultFormat="e4x" result="onMarkersLoad(event)" fault="onMarkersFault(event)" />
+	</fx:Declarations>
+
+	<fx:Script>
+		<![CDATA[
+			import com.google.maps.CopyrightCollection;
+			import com.google.maps.LatLng;
+			import com.google.maps.Map;
+			import com.google.maps.MapEvent;
+			import com.google.maps.MapType;
+			import com.google.maps.MarkerManager;
+			import com.google.maps.controls.MapTypeControl;
+			import com.google.maps.controls.NavigationControl;
+			import com.google.maps.controls.PositionControl;
+			import com.google.maps.controls.ZoomControl;
+			import com.google.maps.overlays.MarkerOptions;
+			
+			import mx.controls.Alert;
+			import mx.events.ResizeEvent;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			
+			private const APP_ID:String = 'ABQIAAAAWTX7IXBD-XKtTFJA11Mp-xTgJLyRROoOcy_r0qyyGbhSDc2PbhRUklUurbYGd5ZsmMO1s3IxL5PWcw';
+			private const MARKERS_URL:String = 'markers.xml';
+			
+			private var googleMap:Map;
+			private var markerManager:MarkerManager;
+			
+			private function init():void 
+			{
+				googleMap = new Map();
+				googleMap.key = APP_ID;
+				googleMap.addEventListener(MapEvent.MAP_READY, onMapReady);
+				googleMap.setSize(new Point(mapContainer.width, mapContainer.height));
+				googleMap.addControl(new NavigationControl());
+				//googleMap.addControl(new MapTypeControl());
+				googleMap.sensor = "false";
+				googleMap.opaqueBackground = 0;
+				mapContainer.addElement(googleMap);
+			}
+			
+			private function mapResize(evt:ResizeEvent):void 
+			{
+				if (googleMap) googleMap.setSize(new Point(mapContainer.width, mapContainer.height));
+			}
+			
+			private function onMapReady(event:MapEvent):void
+			{
+				var copyrightCollection:CopyrightCollection = new CopyrightCollection();
+				var tileLayer:TileLayer = new TileLayer('http://tomasino.org/documents/self/fiction/hierophant/maps/map1/', copyrightCollection, 0, 5);
+				var layerArray:Array = new Array(tileLayer);
+				var custommap:MapType = new MapType(layerArray, googleMap.MERCATOR_PROJECTION, 'Mortum Caelum');
+				
+				googleMap.addMapType(custommap);
+				googleMap.setMapType(custommap);
+				
+				googleMap.removeMapType(MapType.HYBRID_MAP_TYPE);
+				googleMap.removeMapType(MapType.NORMAL_MAP_TYPE);
+				googleMap.removeMapType(MapType.SATELLITE_MAP_TYPE);
+				googleMap.removeMapType(MapType.PHYSICAL_MAP_TYPE);
+				
+				googleMap.disableContinuousZoom();
+				googleMap.enableScrollWheelZoom();
+				googleMap.setZoom(3);
+				googleMap.invalidateDisplayList();
+				googleMap.invalidateLayering();
+				googleMap.setCenter( new LatLng(65, 90) );
+				
+				markerManager = new MarkerManager(googleMap);
+				markersService.send();
+			}
+			
+			private function onMarkersLoad(evt:ResultEvent):void
+			{
+				var xml:XML = evt.result as XML;
+				var stars:XMLList = xml..star;
+				if (stars)
+				{
+					for (var i:int = 0; i < stars.length(); ++i)
+					{
+						var star:XML = stars[i];
+						var lat:Number = Number(star.lat.toString());
+						var lon:Number = Number(star.lon.toString());
+						if (lat && lon)
+						{
+							var latlong:LatLng = new LatLng (lat, lon);
+							var marker:MapMarker = new MapMarker (stars[i].@id, latlong);
+							var minZoom:Number = Number(star.minZoom.toString());
+							var maxZoom:Number = Number(star.maxZoom.toString());
+							markerManager.addMarker( marker, minZoom, maxZoom );
+						}
+					}
+				}
+				
+			}
+			
+			private function onMarkersFault(evt:FaultEvent):void
+			{
+				
+			}
+		]]>
+	</fx:Script>
+	
+	<s:Group id="mapContainer" width="100%" height="100%" resize="mapResize(event)"/>
+
+</s:Application>
