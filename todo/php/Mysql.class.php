@@ -130,14 +130,7 @@ class Mysql
       $result = mysql_query($sql, $this->connx);
       if($result)
       {
-         if(mysql_num_rows($result))
-         {
-            return(new QueryResult($result, $this->connx));
-         }
-         else
-         {
-            return(0);
-         }
+         return(new QueryResult($result, $this->connx));
       }
       else
       {

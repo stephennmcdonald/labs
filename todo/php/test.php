@@ -1,30 +1,15 @@
 <?php
 
-class Test
-{
+    // Error Reporting
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
 
-    private $db;
+    // Includes
+    require_once 'Todo.class.php';
 
-    public function __construct()
-    {
-        $this->db = Mysql::singleton();
-    }
-
-    public function createList($label)
-    {
-
-    }
-
-    public function listGroups()
-    {
-        $result = $this->db->select('SELECT * FROM groups');
-        return $result->getTable(true);
-    }
-}
-
-$test = new Test();
-echo $test->listGroups();
-
+    // Magic
+    $todo = new Todo();
+    echo $todo->listGroups();
 
 ?>
 
