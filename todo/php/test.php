@@ -9,7 +9,9 @@
 
     // Magic
     $todo = new Todo();
+
     echo $todo->listGroups();
+
 
 ?>
 

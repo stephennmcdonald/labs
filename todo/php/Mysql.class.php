@@ -156,7 +156,7 @@ class Mysql
       $result = mysql_query($sql, $this->connx);
       if($result)
       {
-         return(mysql_affected_rows($this->connx));
+         return(new QueryResult( mysql_affected_rows($this->connx), $this->connx));
       }
       else
       {
