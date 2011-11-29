@@ -1,7 +1,34 @@
-<html>
-<head>
-<title>Todo</title>
-</head>
-<body>
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>Todo</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<script type="text/javascript" src="js/swfobject.js"></script>
+		<script type="text/javascript" src="js/swfaddress.js"></script>
+		<script type="text/javascript" src="js/todo.js" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			var swfVersionStr = "11.0.0";
+			var xiSwfUrlStr = "playerProductInstall.swf";
+			var flashvars = {};
+			var params = {};
+			var attributes = {};
+
+			params.quality = "high";
+			params.allowscriptaccess = "sameDomain";
+			params.allowfullscreen = "true";
+			params.wmode = "transparent";
+
+			swfobject.embedSWF( "todo.swf", "flash", "800", "600", swfVersionStr, xiSwfUrlStr, flashvars, params, attributes, flashReady);
+
+		</script>
+	</head>
+
+	<body>
+		<div id="flash">
+			<h1>Adobe Flash Player Needed</h1>
+			<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+		</div>
+	</body>
 </html>
