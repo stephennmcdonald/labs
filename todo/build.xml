@@ -1,23 +1,29 @@
-<project name="todoManager" default="compileFlash" basedir="." >
-	<taskdef resource="flexTasks.tasks" classpath="${basedir}/flexTasks/lib/flexTasks.jar" />
-
+<project name="todoManager" default="main" basedir="." >
 	<description>
 		Todo Manager
 	</description>
 	
-	<property name="SRC" location="src" />
-	<property name="LIBS" location="src/libs" />
-	<property name="BUILD" location="build" />
-	<property name="TEMPLATE" location="html-template" />
-	<property name="FLEX_HOME" value="C:/flex/sdk"/>
-
-	<target name="init">
-		<mkdir dir="${BUILD}" />
-	</target>
+	<property name="FLEX_HOME" location="/Applications/Adobe Flash Builder 4/sdks/4.5.1.21328" />
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
 	
-	<target name="createAssets" depends="init">
-		<copy todir="${BUILD}">
-		  <fileset dir="${TEMPLATE}">
+	<property name="src.dir" location="src" />
+	<property name="libs.dir" location="src/libs" />
+	<property name="build.dir" location="build" />
+	<property name="template.dir" location="html-template" />
+
+	<target name="clean">
+		<delete>
+			<fileset dir="${build.dir}"/>
+		</delete>
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}"/>
+	</target>
+
+	<target name="build" depends="init">
+		<copy todir="${build.dir}">
+		  <fileset dir="${template.dir}">
 		  	<include name="**/css/**"/>
 		  	<include name="**/images/**"/>
 		  	<include name="**/js/**"/>
@@ -25,34 +31,31 @@
 		  </fileset>
 		</copy>
 	</target>
-	
-	<target name="main" depends="createAssets">
+
+	<target name="main" depends="build">
 		<mxmlc 
-			file="${SRC}/org/tomasino/projects/todo/Todo.as" 
-			output="${BUILD}/todo.swf"
+			file="${src.dir}/org/tomasino/projects/todo/Todo.as" 
+			output="${build.dir}/todo.swf"
 			actionscript-file-encoding="UTF-8"
+			keep-generated-actionscript="false"
+			optimize="true"
 			>
 			
 			<!-- Get default compiler options. -->
-			<load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>
+			<load-config filename="config.xml"/>
 			
 			<!-- List of path elements that form the roots of ActionScript class hierarchies. -->
-			<source-path path-element="${FLEX_HOME}/frameworks"/>
-
+			<source-path path-element="${FLEX_HOME}/frameworks" />
+			<source-path path-element="${src.dir}" />
+			
 			<!-- List of SWC files or directories that contain SWC files. -->
-			<compiler.library-path dir="${LIBS}" append="true">
-				<include name="library.swc" />
+			<compiler.library-path dir="${libs.dir}" append="true">
+				<!-- <include name="library.swc" /> -->
 			</compiler.library-path>
 			
 			<compiler.debug>false</compiler.debug>
-
 			<default-size width="500" height="600" />
 		</mxmlc>
 	</target>
 
-	<target name="clean">
-		<delete>
-			<fileset dir="${BUILD}" includes="todo.swf"/>
-		</delete>
-	</target>
 </project>
