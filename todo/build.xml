@@ -1,0 +1,58 @@
+<project name="todoManager" default="compileFlash" basedir="." >
+	<taskdef resource="flexTasks.tasks" classpath="${basedir}/flexTasks/lib/flexTasks.jar" />
+
+	<description>
+		Todo Manager
+	</description>
+	
+	<property name="SRC" location="src" />
+	<property name="LIBS" location="src/libs" />
+	<property name="BUILD" location="build" />
+	<property name="TEMPLATE" location="html-template" />
+	<property name="FLEX_HOME" value="C:/flex/sdk"/>
+
+	<target name="init">
+		<mkdir dir="${BUILD}" />
+	</target>
+	
+	<target name="createAssets" depends="init">
+		<copy todir="${BUILD}">
+		  <fileset dir="${TEMPLATE}">
+		  	<include name="**/css/**"/>
+		  	<include name="**/images/**"/>
+		  	<include name="**/js/**"/>
+		  	<include name="*.html"/>
+		  </fileset>
+		</copy>
+	</target>
+	
+	<target name="main" depends="createAssets">
+		<mxmlc 
+			file="${SRC}/org/tomasino/projects/todo/Todo.as" 
+			output="${BUILD}/todo.swf"
+			actionscript-file-encoding="UTF-8"
+			>
+			
+			<!-- Get default compiler options. -->
+			<load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>
+			
+			<!-- List of path elements that form the roots of ActionScript class hierarchies. -->
+			<source-path path-element="${FLEX_HOME}/frameworks"/>
+
+			<!-- List of SWC files or directories that contain SWC files. -->
+			<compiler.library-path dir="${LIBS}" append="true">
+				<include name="library.swc" />
+			</compiler.library-path>
+			
+			<compiler.debug>false</compiler.debug>
+
+			<default-size width="500" height="600" />
+		</mxmlc>
+	</target>
+
+	<target name="clean">
+		<delete>
+			<fileset dir="${BUILD}" includes="todo.swf"/>
+		</delete>
+	</target>
+</project>
