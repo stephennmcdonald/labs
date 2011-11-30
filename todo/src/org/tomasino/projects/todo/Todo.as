@@ -28,13 +28,25 @@ package org.tomasino.projects.todo
 
 			Log.inst.addConsole ( new LogBookConsole ('_org.tomasino.labs.todo') );
 
-			SWFAddress.addEventListener (SWFAddressEvent.CHANGE, onSWFAddressChange)
+			SWFAddress.addEventListener (SWFAddressEvent.INIT, onSWFAddressInit);
+			SWFAddress.addEventListener (SWFAddressEvent.EXTERNAL_CHANGE, onExternalChange);
+			SWFAddress.addEventListener (SWFAddressEvent.INTERNAL_CHANGE, onInternalChange);
+		}
+		
+		private function onSWFAddressInit ( e:SWFAddressEvent ):void
+		{
+			SWFAddress.removeEventListener (SWFAddressEvent.INIT, onSWFAddressInit);
+			_log.info ('SWFAddress Init:');
 		}
 
-		private function onSWFAddressChange (e:SWFAddressEvent):void
+		private function onExternalChange ( e:SWFAddressEvent ):void
 		{
-			_log.info (e.path);
+			_log.info ('External Change:', e.path);
+		}
+		
+		private function onInternalChange ( e:SWFAddressEvent ):void
+		{
+			_log.info ('Internal Change:', e.path)
 		}
 	}
-
 }
