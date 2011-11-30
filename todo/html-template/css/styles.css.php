@@ -1,18 +1,44 @@
 <?php
-  header('Content-type: text/css');
-  ob_start("compress");
-  function compress($buffer) {
-    /* remove comments */
+
+    //##################################################################
+    //#########################  COMPRESS CSS  #########################
+    //##################################################################
+
+    ob_start ("ob_gzhandler");
+    header ("content-type: text/css; charset: UTF-8");
+    header ("cache-control: must-revalidate");
+    header ("expires: " . gmdate ("D, d M Y H:i:s", time() + 3600) . " GMT");
+
+    //##################################################################
+    //#########################  CSS FILE LIST  ########################
+    //##################################################################
+
+
+
+
+    $css = array (
+        'reset.css',
+        'master.css',
+    );
+
+
+
+
+    //##################################################################
+    //#########################  PROCESS  CSS  #########################
+    //##################################################################
+
+    $buffer = '';
+    for ($i = 0; $i < count($css); $i++ )
+    {
+        $filename = $css[$i];
+        if (is_file($filename))
+        {
+            $buffer .= file_get_contents ($filename);
+        }
+    }
     $buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
-    /* remove tabs, spaces, newlines, etc. */
     $buffer = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $buffer);
-    return $buffer;
-  }
-
-  /* your css files */
-  include('reset.css');
-  include('master.css');
-
-  ob_end_flush();
+    echo $buffer;
 ?>
 
