@@ -28,6 +28,9 @@
     //#########################  PROCESS  CSS  #########################
     //##################################################################
 
+
+    $_inHack = true;
+
     function minify($css) // From Google Minify
     {
         $css = str_replace("\r\n", "\n", $css);
@@ -42,7 +45,7 @@
         $css = preg_replace('@:\\s*/\\*\\s*\\*/@', ':/*keep*/', $css);
 
         // apply callback to all valid comments (and strip out surrounding ws
-//      $css = preg_replace_callback('@\\s*/\\*([\\s\\S]*?)\\*/\\s*@', array($this, '_commentCB'), $css);
+        $css = preg_replace_callback('@\\s*/\\*([\\s\\S]*?)\\*/\\s*@', '_commentCB', $css);
 
         // remove ws around { } and last semicolon in declaration block
         $css = preg_replace('/\\s*{\\s*/', '{', $css);
@@ -114,6 +117,61 @@
     {
         // remove ws around the combinators
         return preg_replace('/\\s*([,>+~])\\s*/', '$1', $m[0]);
+    }
+
+    function _commentCB($m)
+    {
+        global $_inHack;
+
+        $hasSurroundingWs = (trim($m[0]) !== $m[1]);
+        $m = $m[1];
+        // $m is the comment content w/o the surrounding tokens,
+        // but the return value will replace the entire comment.
+        if ($m === 'keep') {
+            return '/**/';
+        }
+        if ($m === '" "') {
+            // component of http://tantek.com/CSS/Examples/midpass.html
+            return '/*" "*/';
+        }
+        if (preg_match('@";\\}\\s*\\}/\\*\\s+@', $m)) {
+            // component of http://tantek.com/CSS/Examples/midpass.html
+            return '/*";}}/* */';
+        }
+        if ($_inHack) {
+            // inversion: feeding only to one browser
+            if (preg_match('@
+                    ^/               # comment started like /*/
+                    \\s*
+                    (\\S[\\s\\S]+?)  # has at least some non-ws content
+                    \\s*
+                    /\\*             # ends like /*/ or /**/
+                @x', $m, $n)) {
+                // end hack mode after this comment, but preserve the hack and comment content
+                $_inHack = false;
+                return "/*/{$n[1]}/**/";
+            }
+        }
+        if (substr($m, -1) === '\\') { // comment ends like \*/
+            // begin hack mode and preserve hack
+            $_inHack = true;
+            return '/*\\*/';
+        }
+        if ($m !== '' && $m[0] === '/') { // comment looks like /*/ foo */
+            // begin hack mode and preserve hack
+            $_inHack = true;
+            return '/*/*/';
+        }
+        if ($_inHack) {
+            // a regular comment ends hack mode but should be preserved
+            $_inHack = false;
+            return '/**/';
+        }
+        // Issue 107: if there's any surrounding whitespace, it may be important, so
+        // replace the comment with a single space
+        return $hasSurroundingWs // remove all other comments
+            ? ' '
+            : '';
     }
 
 
