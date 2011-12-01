@@ -10,11 +10,13 @@ package org.tomasino.projects.todo
 	import org.tomasino.logging.Logger;
 	import org.tomasino.logging.LogBookConsole;
 
+	import org.tomasino.projects.todo.services.TodoService;
+
 	[SWF(width="800", height="600", frameRate="30", backgroundColor="#FFFFFF")]
 	public class Todo extends Sprite
 	{
-
 		private var _log:Logger = new Logger (this);
+		private var _service:TodoService = new TodoService ('http://www.tomasino.org/todo/service.php');
 
 		public function Todo ():void
 		{
@@ -42,6 +44,7 @@ package org.tomasino.projects.todo
 		private function onExternalChange ( e:SWFAddressEvent ):void
 		{
 			_log.info ('External Change:', e.path);
+			_service.test();
 		}
 		
 		private function onInternalChange ( e:SWFAddressEvent ):void

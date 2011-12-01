@@ -52,11 +52,10 @@
 			
 			<!-- List of SWC files or directories that contain SWC files. -->
 			<compiler.library-path dir="${libs.dir}" append="true">
-				<!-- <include name="library.swc" /> -->
+				<!-- <include name="mx.swc" /> -->
 			</compiler.library-path>
 			
 			<compiler.debug>false</compiler.debug>
-			<default-size width="500" height="600" />
 		</mxmlc>
 	</target>
 
