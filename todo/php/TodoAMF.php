@@ -12,7 +12,7 @@
 
 		function test()
 		{
-			return "";
+			return "test!";
 		}
 	}
 ?>
