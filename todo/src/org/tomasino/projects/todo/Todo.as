@@ -44,7 +44,6 @@ package org.tomasino.projects.todo
 		private function onExternalChange ( e:SWFAddressEvent ):void
 		{
 			_log.info ('External Change:', e.path);
-			_service.test();
 		}
 		
 		private function onInternalChange ( e:SWFAddressEvent ):void
