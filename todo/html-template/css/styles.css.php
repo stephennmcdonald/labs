@@ -181,7 +181,7 @@
         $filename = $css[$i];
         if (is_file($filename))
         {
-            $buffer .= file_get_contents ($filename);
+            $buffer .= "\n" . file_get_contents ($filename);
         }
     }
     $buffer = minify($buffer);
