@@ -36,6 +36,23 @@
             return $result;
         }
 
+        public function getGroup($groupID)
+        {
+            $result = $this->db->select('SELECT * FROM todo_group WHERE group = ' . $groupID);
+            return $result;
+        }
+
+        public function getItem($itemID)
+        {
+            $result = $this->db->select('SELECT * FROM todo_item WHERE id = ' . $itemID);
+            return $result;
+        }
+
+        public function getItemsInGroup ($groupID)
+        {
+            $result = $this->db->select('SELECT * FROM todo_item WHERE group = ' . $groupID);
+            return $result;
+        }
 
         public function listGroups()
         {
