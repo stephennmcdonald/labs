@@ -16,13 +16,13 @@
 	<property name="build.dir" location="build" />
 	<property name="template.dir" location="html-template" />
 
+	<!-- Check if Build folder already exists. -->
 	<condition property="build.exists">
 		<available file="${build.dir}" type="dir"/>
 	</condition>
 
 	<!-- Cleanup -->
 	<target name="clean" if="build.exists">
-		
 		<delete>
 			<fileset dir="${build.dir}"/>
 		</delete>
@@ -44,7 +44,6 @@
 		  </fileset>
 		</copy>
 	</target>
-
 
 	<!-- Compile SWF -->
 	<target name="main" depends="build">
