@@ -4,11 +4,11 @@
 	</description>
 
 	<!-- Paths to SDK & Jar -->
-	<property name="FLEX_HOME" location="/Users/tomasino/Documents/sdks/4.5.1.21328" />
+	<property name="FLEX_HOME" location="/Applications/Adobe Flash Builder 4/sdks/4.5.1.21328" />
 	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
 
 	<!-- Define External Code Libraries -->
-	<property name="tomasinolibs.dir" location="/Users/tomasino/Documents/libs" />
+	<property name="tomasinolibs.dir" location="/Users/artist/Documents/tomasino" />
 
 	<!-- Basic relative paths -->
 	<property name="src.dir" location="src" />
@@ -16,8 +16,13 @@
 	<property name="build.dir" location="build" />
 	<property name="template.dir" location="html-template" />
 
+	<condition property="build.exists">
+		<available file="${build.dir}" type="dir"/>
+	</condition>
+
 	<!-- Cleanup -->
-	<target name="clean">
+	<target name="clean" if="build.exists">
+		
 		<delete>
 			<fileset dir="${build.dir}"/>
 		</delete>
@@ -39,6 +44,7 @@
 		  </fileset>
 		</copy>
 	</target>
+
 
 	<!-- Compile SWF -->
 	<target name="main" depends="build">

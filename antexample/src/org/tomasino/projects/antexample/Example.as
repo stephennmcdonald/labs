@@ -1,6 +1,7 @@
 package org.tomasino.projects.antexample
 {
 	import flash.display.Sprite;
+	import flash.events.Event;
 	
 	[SWF(width="800", height="600", frameRate="30", backgroundColor="#FFFFFF")]
 	public class Example extends Sprite
