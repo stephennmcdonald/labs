@@ -1,0 +1,71 @@
+<project name="antExample" default="main" basedir="." >
+	<description>
+		Ant Example
+	</description>
+
+	<!-- Paths to SDK & Jar -->
+	<property name="FLEX_HOME" location="/Users/tomasino/Documents/sdks/4.5.1.21328" />
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+
+	<!-- Define External Code Libraries -->
+	<property name="tomasinolibs.dir" location="/Users/tomasino/Documents/libs" />
+
+	<!-- Basic relative paths -->
+	<property name="src.dir" location="src" />
+	<property name="libs.dir" location="src/libs" />
+	<property name="build.dir" location="build" />
+	<property name="template.dir" location="html-template" />
+
+	<!-- Cleanup -->
+	<target name="clean">
+		<delete>
+			<fileset dir="${build.dir}"/>
+		</delete>
+	</target>
+
+	<!-- Create any dependencies for project -->
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}"/>
+	</target>
+
+	<!-- Build ouput folder -->
+	<target name="build" depends="init">
+		<copy todir="${build.dir}">
+		  <fileset dir="${template.dir}">
+		  	<include name="**/css/**"/>
+		  	<include name="**/images/**"/>
+		  	<include name="**/js/**"/>
+		  	<include name="*.html"/>
+		  </fileset>
+		</copy>
+	</target>
+
+	<!-- Compile SWF -->
+	<target name="main" depends="build">
+		<mxmlc 
+			file="${src.dir}/org/tomasino/projects/antexample/Example.as" 
+			output="${build.dir}/example.swf"
+			actionscript-file-encoding="UTF-8"
+			keep-generated-actionscript="false"
+			optimize="true"
+			>
+			
+			<!-- Get default compiler options. Hand modified to remove extraneous Flex trash -->
+			<load-config filename="config.xml"/>
+			
+			<!-- List of path elements that form the roots of ActionScript class hierarchies. -->
+			<source-path path-element="${FLEX_HOME}/frameworks" />
+			<source-path path-element="${src.dir}" />
+			<source-path path-element="${tomasinolibs.dir}" />
+			
+			<!-- List of SWC files or directories that contain SWC files. -->
+			<compiler.library-path dir="${libs.dir}" append="true">
+				<!-- <include name="example.swc" /> -->
+			</compiler.library-path>
+
+			<!-- Flags -->
+			<compiler.debug>false</compiler.debug>
+		</mxmlc>
+	</target>
+
+</project>
