@@ -1,3 +1,4 @@
 .DS_Store
 todo/build/*
 antexample/build/*
+antexample/ant/local.properties
