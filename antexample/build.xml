@@ -1,40 +1,20 @@
-<project name="antExample" default="main" basedir="." >
+<project name="antExample" default="compile" basedir="." >
 	<description>
 		Ant Example
 	</description>
 
-	<!-- Paths to SDK & Jar -->
-	<property name="FLEX_HOME" location="/Applications/Adobe Flash Builder 4/sdks/4.5.1.21328" />
+	<property file="ant/local.properties" description="local build configuration."/>
+	<property file="ant/build.properties" description="build configuration."/>
+
 	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
 
-	<!-- Define External Code Libraries -->
-	<property name="tomasinolibs.dir" location="/Users/artist/Documents/tomasino" />
-
-	<!-- Basic relative paths -->
-	<property name="src.dir" location="src" />
-	<property name="libs.dir" location="src/libs" />
-	<property name="build.dir" location="build" />
-	<property name="template.dir" location="html-template" />
-
-	<!-- Check if Build folder already exists. -->
-	<condition property="build.exists">
-		<available file="${build.dir}" type="dir"/>
-	</condition>
-
-	<!-- Cleanup -->
-	<target name="clean" if="build.exists">
-		<delete>
-			<fileset dir="${build.dir}"/>
-		</delete>
-	</target>
-
-	<!-- Create any dependencies for project -->
-	<target name="init" depends="clean">
+	<!-- Create the build folder for project -->
+	<target name="make_build">
 		<mkdir dir="${build.dir}"/>
 	</target>
 
-	<!-- Build ouput folder -->
-	<target name="build" depends="init">
+	<!-- Copy template folder to build -->
+	<target name="make_template" depends="make_build" unless="nochanges_template">
 		<copy todir="${build.dir}">
 		  <fileset dir="${template.dir}">
 		  	<include name="**/css/**"/>
@@ -45,8 +25,8 @@
 		</copy>
 	</target>
 
-	<!-- Compile SWF -->
-	<target name="main" depends="build">
+	<!-- Compile SWF to build -->
+	<target name="make_swf" depends="make_template" unless="nochanges_flash">
 		<mxmlc 
 			file="${src.dir}/org/tomasino/projects/antexample/Example.as" 
 			output="${build.dir}/example.swf"
@@ -56,7 +36,7 @@
 			>
 			
 			<!-- Get default compiler options. Hand modified to remove extraneous Flex trash -->
-			<load-config filename="config.xml"/>
+			<load-config filename="ant/config.xml"/>
 			
 			<!-- List of path elements that form the roots of ActionScript class hierarchies. -->
 			<source-path path-element="${FLEX_HOME}/frameworks" />
@@ -72,5 +52,28 @@
 			<compiler.debug>false</compiler.debug>
 		</mxmlc>
 	</target>
+
+	<!-- Test for dependencies and changes -->
+	<target name="init">
+		<uptodate property="nochanges_flash" targetfile="${build.dir}/example.swf">
+			<srcfiles dir="${src.dir}" includes="**/**"/>
+		</uptodate>
+		
+		<uptodate property="nochanges_template" targetfile="${build.dir}/index.html">
+			<srcfiles dir="${template.dir}" includes="**/**"/>
+		</uptodate>
+
+		<condition property="build.exists">
+			<available file="${build.dir}" type="dir"/>
+		</condition>
+	</target>
+
+	<!-- Cleanup -->
+	<target name="clean" depends="init" if="build.exists">
+		<delete dir="${build.dir}"/>
+	</target>
+
+	<!-- Compile SWF -->
+	<target name="compile" depends="init, make_swf" />
 
 </project>
